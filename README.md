@@ -7,17 +7,17 @@ Trustbuilder is a simple bash script that runs on one host, and automates the ve
 
 Here are the usage instructions:
 
-When running the script, you MUST provide two arguments:
+When running the script, you MUST provide two arguments:  
 * Remote Post (ip or hostname)
 * Remote Port (tcp port)
 
-Here is an example of the command to execute this script: 
+Here is an example of the command to execute this script:  
 ``` ./trustbuilder.sh remoteserver.mydomain.com 22``` 
  
 The script will ask you for the remote server's password twice
-When complete, the identify files will be in the following format:
-    "tbldr-hostname-key"
+When complete, the identify files will be in the following format:  
+"tbldr-hostname-key"
 
-Here is an example of a scripted SSH command after the script is finished: 
+Here is an example of a scripted SSH command after the script is finished:  
 
 ``` ssh -i /root/.ssh/tbldr-hostname-key remoteserver.mydomain.com "uptime | awk '{print "Uptime="$1}';df -h | awk '/hda1/ {print "DiskUsage="$5}'" ```
